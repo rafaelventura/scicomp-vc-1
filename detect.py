@@ -21,4 +21,5 @@ for f in filenames:
     print f
     detect_problems(f)
 
-# Blablabla
+
+## what to do if problems are detected??

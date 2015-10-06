@@ -20,3 +20,5 @@ filenames = glob.glob('/Users/dcl9/gcbCourse/materials/cshl_rna_seq/*.bed*')
 for f in filenames:
     print f
     detect_problems(f)
+
+# Blablabla

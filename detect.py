@@ -2,9 +2,13 @@
 import pandas
 import glob
 
-def detect_problems(filename):
+def read_bed(filename):
     data = pandas.read_table(filename, header=None)
     data.columns = ['chrom','chromStart','chromEnd','name','score','strand','level','signif','score2']
+    return data
+
+def detect_problems(filename):
+    data = read_bed(filename)
     if data['score2'].min() < 1 and data['score'].min() > 0:
         print 'Suspicious data!'
     elif data.loc[data['chrom'] == 'chrM']['score'].mean() > 200:

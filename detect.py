@@ -1,6 +1,5 @@
 
 import pandas
-import glob
 
 def detect_problems(filename):
     data = pandas.read_table(filename, header=None)
@@ -12,6 +11,7 @@ def detect_problems(filename):
     else:
         print 'Seems OK!'
         
+import glob
 filenames = glob.glob('data/*.bed')
 for f in filenames[:3]:
     print f
